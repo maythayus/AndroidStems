@@ -134,7 +134,11 @@ private const val TAG = "VideoListPage"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun VideoListPage(viewModel: VideoListViewModel = koinViewModel(), onNavigateBack: () -> Unit) {
+fun VideoListPage(
+    viewModel: VideoListViewModel = koinViewModel(),
+    onNavigateBack: () -> Unit,
+    onSeparateTracks: (DownloadedVideoInfo) -> Unit = {},
+) {
     val viewState by viewModel.stateFlow.collectAsStateWithLifecycle()
     val fullVideoList by viewModel.videoListFlow.collectAsStateWithLifecycle(emptyList())
     val searchedVideoList by
@@ -525,6 +529,7 @@ fun VideoListPage(viewModel: VideoListViewModel = koinViewModel(), onNavigateBac
                 scope.launch { sheetState.hide() }.invokeOnCompletion { showBottomSheet = false }
             },
             onDelete = { showRemoveDialog = true },
+            onSeparateTracks = { onSeparateTracks(currentVideoInfo) },
         )
     }
 

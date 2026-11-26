@@ -31,8 +31,8 @@ import okhttp3.ResponseBody
 
 object UpdateUtil {
 
-    private const val OWNER = "JunkFood02"
-    private const val REPO = "Seal"
+    private const val OWNER = "maythayus"
+    private const val REPO = "AndroidStems"
     private const val ARM64 = "arm64-v8a"
     private const val ARM32 = "armeabi-v7a"
     private const val X86 = "x86"
@@ -64,10 +64,11 @@ object UpdateUtil {
             YoutubeDL.getInstance()
                 .updateYoutubeDL(appContext = context, updateChannel = channel)
                 .also {
-                    if (it == YoutubeDL.UpdateStatus.DONE) {
-                        YoutubeDL.getInstance().version(context)?.let {
-                            PreferenceUtil.encodeString(YT_DLP_VERSION, it)
-                        }
+                    // DONE = nouvelle version installée, ALREADY_UP_TO_DATE = déjà à jour :
+                    // dans les deux cas on enregistre la version pour ne plus la considérer
+                    // comme « jamais mise à jour ».
+                    YoutubeDL.getInstance().version(context)?.let {
+                        PreferenceUtil.encodeString(YT_DLP_VERSION, it)
                     }
                     val now = System.currentTimeMillis()
                     YT_DLP_UPDATE_TIME.updateLong(now)

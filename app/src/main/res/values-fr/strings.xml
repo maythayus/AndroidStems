@@ -443,4 +443,27 @@
     <string name="trouble_shooting">Dépannage</string>
     <string name="issue_tracker">Suivi des problèmes</string>
     <string name="trouble_shooting_desc">Corriger les erreurs courantes et vérifier les problèmes connus</string>
+    <string name="stems_title">Séparer les pistes</string>
+    <string name="stems_intro">Sépare un morceau en voix et instrumental, directement sur ton téléphone, sans Internet. Choisis n\'importe quel fichier audio ou vidéo, ou utilise le bouton Séparer dans l\'historique des téléchargements.</string>
+    <string name="stems_model_hint">À la première utilisation, le modèle d\'IA (%1$d Mo) est téléchargé une seule fois.</string>
+    <string name="stems_no_file">Aucun fichier sélectionné</string>
+    <string name="stems_pick_file">Choisir un fichier</string>
+    <string name="stems_start">Séparer</string>
+    <string name="stems_step_download">Téléchargement du modèle d\'IA</string>
+    <string name="stems_step_decode">Lecture de l\'audio</string>
+    <string name="stems_step_separate">Séparation des pistes</string>
+    <string name="stems_failed">Échec de la séparation : %1$s</string>
+    <string name="stems_done">Terminé en %1$d s. Fichiers enregistrés dans Musique/Android Stems.</string>
+    <string name="stems_vocals">Voix</string>
+    <string name="stems_instrumental">Instrumental</string>
+    <string name="stems_play">Écouter</string>
+    <string name="stems_error_too_long">Ce fichier est trop long (%1$d minutes maximum).</string>
+    <string name="stems_error_no_audio">Aucune piste audio trouvée dans ce fichier.</string>
+    <string name="stems_credits">Modèle : %1$s de l\'équipe Ultimate Vocal Remover (licence MIT), exécuté avec ONNX Runtime.</string>
+    <string name="based_on_seal">Basé sur Seal</string>
+    <string name="based_on_seal_desc">Application d\'origine par JunkFood02 et les contributeurs de Seal (GPL-3.0)</string>
+    <string name="creator_youtube">Ma chaîne YouTube</string>
+    <string name="creator_youtube_desc">Vidéos et tutos de maythayus</string>
+    <string name="creator_soundcloud">Mon SoundCloud</string>
+    <string name="creator_soundcloud_desc">La musique de maythayus</string>
 </resources>

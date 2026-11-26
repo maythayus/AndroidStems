@@ -19,6 +19,7 @@ import androidx.compose.material.ModalBottomSheetState
 import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Delete
+import androidx.compose.material.icons.outlined.GraphicEq
 import androidx.compose.material.icons.outlined.FileDownload
 import androidx.compose.material.icons.outlined.Link
 import androidx.compose.material.icons.outlined.Share
@@ -60,6 +61,7 @@ fun VideoDetailDrawer(
     isFileAvailable: Boolean = true,
     onDismissRequest: () -> Unit = {},
     onDelete: () -> Unit = {},
+    onSeparateTracks: (() -> Unit)? = null,
 ) {
     val uriHandler = LocalUriHandler.current
     val view = LocalView.current
@@ -90,6 +92,14 @@ fun VideoDetailDrawer(
             url = videoUrl,
             isFileAvailable = isFileAvailable,
             onReDownload = onReDownload,
+            onSeparateTracks =
+                onSeparateTracks?.let {
+                    {
+                        view.slightHapticFeedback()
+                        onDismissRequest()
+                        it()
+                    }
+                },
             onDismissRequest = onDismissRequest,
             onDelete = {
                 view.slightHapticFeedback()
@@ -137,6 +147,7 @@ fun VideoDetailDrawerImpl(
     onDismissRequest: () -> Unit = {},
     isFileAvailable: Boolean = true,
     onReDownload: (() -> Unit) = {},
+    onSeparateTracks: (() -> Unit)? = null,
     onDelete: () -> Unit = {},
     onOpenLink: () -> Unit = {},
     onShareFile: () -> Unit = {},
@@ -199,6 +210,14 @@ fun VideoDetailDrawerImpl(
                     icon = Icons.Outlined.Delete,
                     text = stringResource(R.string.remove),
                 )
+                if (isFileAvailable && onSeparateTracks != null) {
+                    OutlinedButtonWithIcon(
+                        modifier = Modifier.padding(end = 12.dp),
+                        onClick = onSeparateTracks,
+                        icon = Icons.Outlined.GraphicEq,
+                        text = stringResource(R.string.stems_start),
+                    )
+                }
                 if (isFileAvailable) {
                     FilledTonalButtonWithIcon(
                         onClick = onShareFile,

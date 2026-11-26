@@ -36,7 +36,9 @@ import com.junkfood.seal.R
 import com.junkfood.seal.ui.common.HapticFeedback.slightHapticFeedback
 import com.junkfood.seal.ui.common.LocalWindowWidthState
 import com.junkfood.seal.ui.common.Route
+import com.junkfood.seal.stems.StemSeparation
 import com.junkfood.seal.ui.common.animatedComposable
+import com.junkfood.seal.ui.page.stems.StemSeparationPage
 import com.junkfood.seal.ui.common.animatedComposableVariant
 import com.junkfood.seal.ui.common.arg
 import com.junkfood.seal.ui.common.id
@@ -72,7 +74,7 @@ import org.koin.androidx.compose.koinViewModel
 private const val TAG = "HomeEntry"
 
 private val TopDestinations =
-    listOf(Route.HOME, Route.TASK_LIST, Route.SETTINGS_PAGE, Route.DOWNLOADS)
+    listOf(Route.HOME, Route.TASK_LIST, Route.SETTINGS_PAGE, Route.DOWNLOADS, Route.STEMS)
 
 @Composable
 fun AppEntry(dialogViewModel: DownloadDialogViewModel) {
@@ -152,7 +154,16 @@ fun AppEntry(dialogViewModel: DownloadDialogViewModel) {
                         },
                     )
                 }
-                animatedComposable(Route.DOWNLOADS) { VideoListPage { onNavigateBack() } }
+                animatedComposable(Route.DOWNLOADS) {
+                    VideoListPage(
+                        onNavigateBack = onNavigateBack,
+                        onSeparateTracks = { info ->
+                            StemSeparation.selectFile(context, info.videoPath, info.videoTitle)
+                            navController.navigate(Route.STEMS) { launchSingleTop = true }
+                        },
+                    )
+                }
+                animatedComposable(Route.STEMS) { StemSeparationPage(onNavigateBack) }
                 animatedComposableVariant(Route.TASK_LIST) {
                     TaskListPage(
                         onNavigateBack = onNavigateBack,
