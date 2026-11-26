@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Seal</string>
+    <string name="app_name" translatable="false">Seal Stems</string>
     <string name="video_directory">Video folder</string>
     <string name="extract_audio">Save as audio</string>
     <string name="create_thumbnail">Save thumbnail</string>
@@ -450,4 +450,23 @@
         <item quantity="one">%d audio</item>
         <item quantity="other">%d audios</item>
     </plurals>
+    <string name="stems_title">Separate tracks</string>
+    <string name="stems_intro">Splits a song into vocals and instrumental, directly on your phone, without Internet. Pick any audio or video file, or use the Separate button in your download history.</string>
+    <string name="stems_model_hint">On first use, the AI model (%1$d MB) is downloaded once.</string>
+    <string name="stems_no_file">No file selected</string>
+    <string name="stems_pick_file">Pick a file</string>
+    <string name="stems_start">Separate</string>
+    <string name="stems_step_download">Downloading the AI model</string>
+    <string name="stems_step_decode">Reading the audio</string>
+    <string name="stems_step_separate">Separating the tracks</string>
+    <string name="stems_failed">Separation failed: %1$s</string>
+    <string name="stems_done">Done in %1$d s. Files saved in Music/Seal Stems.</string>
+    <string name="stems_vocals">Vocals</string>
+    <string name="stems_instrumental">Instrumental</string>
+    <string name="stems_play">Play</string>
+    <string name="stems_error_too_long">This file is too long (max %1$d minutes).</string>
+    <string name="stems_error_no_audio">No audio track found in this file.</string>
+    <string name="stems_credits">Model: %1$s by the Ultimate Vocal Remover team (MIT license), run with ONNX Runtime.</string>
+    <string name="based_on_seal">Based on Seal</string>
+    <string name="based_on_seal_desc">Original app by JunkFood02 and the Seal contributors (GPL-3.0)</string>
 </resources>

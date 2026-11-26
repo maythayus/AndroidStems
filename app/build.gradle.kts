@@ -44,7 +44,7 @@ android {
     buildFeatures { buildConfig = true }
 
     defaultConfig {
-        applicationId = "com.junkfood.seal"
+        applicationId = "com.maythayus.sealstems"
         minSdk = 24
         targetSdk = 35
         versionCode = 200_000_150
@@ -110,7 +110,7 @@ android {
             }
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
-            resValue("string", "app_name", "Seal Debug")
+            resValue("string", "app_name", "Seal Stems Debug")
         }
     }
 
@@ -125,7 +125,7 @@ android {
         create("githubPreview") {
             dimension = "publishChannel"
             applicationIdSuffix = ".preview"
-            resValue("string", "app_name", "Seal Preview")
+            resValue("string", "app_name", "Seal Stems Preview")
         }
 
         create("fdroid") {
@@ -185,6 +185,10 @@ dependencies {
     implementation(libs.bundles.youtubedlAndroid)
 
     implementation(libs.mmkv)
+
+    // Séparation de pistes (IA locale)
+    implementation(libs.onnxruntime.android)
+    implementation(libs.jtransforms)
 
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.ext)

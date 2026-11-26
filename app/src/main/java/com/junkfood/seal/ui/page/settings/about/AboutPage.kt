@@ -54,8 +54,9 @@ import com.junkfood.seal.util.AUTO_UPDATE
 import com.junkfood.seal.util.PreferenceUtil
 import com.junkfood.seal.util.ToastUtil
 
-private const val releaseURL = "https://github.com/JunkFood02/Seal/releases"
-private const val repoUrl = "https://github.com/JunkFood02/Seal"
+private const val releaseURL = "https://github.com/maythayus/SealStems/releases"
+private const val repoUrl = "https://github.com/maythayus/SealStems"
+private const val upstreamRepoUrl = "https://github.com/JunkFood02/Seal"
 const val weblate = "https://hosted.weblate.org/engage/seal/"
 const val YtdlpRepository = "https://github.com/yt-dlp/yt-dlp"
 private const val githubIssueUrl = "https://github.com/JunkFood02/Seal/issues"
@@ -126,6 +127,15 @@ fun AboutPage(
                         icon = Icons.Outlined.NewReleases,
                     ) {
                         openUrl(releaseURL)
+                    }
+                }
+                item {
+                    PreferenceItem(
+                        title = stringResource(R.string.based_on_seal),
+                        description = stringResource(R.string.based_on_seal_desc),
+                        icon = Icons.Outlined.Description,
+                    ) {
+                        openUrl(upstreamRepoUrl)
                     }
                 }
                 /*            item {

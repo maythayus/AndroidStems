@@ -25,6 +25,8 @@ import androidx.compose.material.icons.outlined.Download
 import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Subscriptions
+import androidx.compose.material.icons.outlined.GraphicEq
+import androidx.compose.material.icons.filled.GraphicEq
 import androidx.compose.material.icons.outlined.Terminal
 import androidx.compose.material.icons.outlined.VolunteerActivism
 import androidx.compose.material.icons.rounded.BugReport
@@ -194,6 +196,16 @@ fun NavigationDrawerSheetContent(
                         .invokeOnCompletion { onNavigateToRoute(Route.DOWNLOADS) }
                 },
                 selected = currentRoute == Route.DOWNLOADS,
+            )
+            NavigationDrawerItem(
+                label = { Text(stringResource(R.string.stems_title)) },
+                icon = { Icon(Icons.Outlined.GraphicEq, null) },
+                onClick = {
+                    scope
+                        .launch { onDismissRequest() }
+                        .invokeOnCompletion { onNavigateToRoute(Route.STEMS) }
+                },
+                selected = currentRoute == Route.STEMS,
             )
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.custom_command)) },
@@ -370,6 +382,19 @@ fun NavigationRailContent(
             modifier = Modifier,
             selected = currentTopDestination == Route.DOWNLOADS,
             onClick = { onNavigateToRoute(Route.DOWNLOADS) },
+        )
+
+        NavigationRailItemVariant(
+            icon = {
+                Icon(
+                    if (currentTopDestination == Route.STEMS) Icons.Filled.GraphicEq
+                    else Icons.Outlined.GraphicEq,
+                    stringResource(R.string.stems_title),
+                )
+            },
+            modifier = Modifier,
+            selected = currentTopDestination == Route.STEMS,
+            onClick = { onNavigateToRoute(Route.STEMS) },
         )
 
         NavigationRailItemVariant(
