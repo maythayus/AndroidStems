@@ -7,6 +7,8 @@ import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AutoAwesome
 import androidx.compose.material.icons.outlined.Description
+import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.PlayCircle
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.NewReleases
 import androidx.compose.material.icons.outlined.Update
@@ -54,8 +56,10 @@ import com.junkfood.seal.util.AUTO_UPDATE
 import com.junkfood.seal.util.PreferenceUtil
 import com.junkfood.seal.util.ToastUtil
 
-private const val releaseURL = "https://github.com/maythayus/SealStems/releases"
-private const val repoUrl = "https://github.com/maythayus/SealStems"
+private const val releaseURL = "https://github.com/maythayus/AndroidStems/releases"
+private const val repoUrl = "https://github.com/maythayus/AndroidStems"
+private const val youtubeUrl = "https://www.youtube.com/@maythayus1"
+private const val soundcloudUrl = "https://soundcloud.com/user-807863479-448305626"
 private const val upstreamRepoUrl = "https://github.com/JunkFood02/Seal"
 const val weblate = "https://hosted.weblate.org/engage/seal/"
 const val YtdlpRepository = "https://github.com/yt-dlp/yt-dlp"
@@ -127,6 +131,24 @@ fun AboutPage(
                         icon = Icons.Outlined.NewReleases,
                     ) {
                         openUrl(releaseURL)
+                    }
+                }
+                item {
+                    PreferenceItem(
+                        title = stringResource(R.string.creator_youtube),
+                        description = stringResource(R.string.creator_youtube_desc),
+                        icon = Icons.Outlined.PlayCircle,
+                    ) {
+                        openUrl(youtubeUrl)
+                    }
+                }
+                item {
+                    PreferenceItem(
+                        title = stringResource(R.string.creator_soundcloud),
+                        description = stringResource(R.string.creator_soundcloud_desc),
+                        icon = Icons.Outlined.MusicNote,
+                    ) {
+                        openUrl(soundcloudUrl)
                     }
                 }
                 item {

@@ -453,7 +453,7 @@
     <string name="stems_step_decode">Lecture de l\'audio</string>
     <string name="stems_step_separate">Séparation des pistes</string>
     <string name="stems_failed">Échec de la séparation : %1$s</string>
-    <string name="stems_done">Terminé en %1$d s. Fichiers enregistrés dans Musique/Seal Stems.</string>
+    <string name="stems_done">Terminé en %1$d s. Fichiers enregistrés dans Musique/Android Stems.</string>
     <string name="stems_vocals">Voix</string>
     <string name="stems_instrumental">Instrumental</string>
     <string name="stems_play">Écouter</string>
@@ -462,4 +462,8 @@
     <string name="stems_credits">Modèle : %1$s de l\'équipe Ultimate Vocal Remover (licence MIT), exécuté avec ONNX Runtime.</string>
     <string name="based_on_seal">Basé sur Seal</string>
     <string name="based_on_seal_desc">Application d\'origine par JunkFood02 et les contributeurs de Seal (GPL-3.0)</string>
+    <string name="creator_youtube">Ma chaîne YouTube</string>
+    <string name="creator_youtube_desc">Vidéos et tutos de maythayus</string>
+    <string name="creator_soundcloud">Mon SoundCloud</string>
+    <string name="creator_soundcloud_desc">La musique de maythayus</string>
 </resources>

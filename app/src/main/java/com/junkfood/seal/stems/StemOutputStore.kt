@@ -14,7 +14,7 @@ import java.io.OutputStream
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
-/** Un fichier WAV 16 bits stéréo écrit dans Musique/Seal Stems/<titre>/. */
+/** Un fichier WAV 16 bits stéréo écrit dans Musique/Android Stems/<titre>/. */
 class StemWavFile
 private constructor(
     private val context: Context,
@@ -62,7 +62,7 @@ private constructor(
     private fun toShort(v: Float): Short = (v.coerceIn(-1f, 1f) * 32767f).toInt().toShort()
 
     companion object {
-        const val FOLDER = "Seal Stems"
+        const val FOLDER = "Android Stems"
 
         fun safeName(name: String): String =
             name.replace(Regex("[\\\\/:*?\"<>|\\p{Cntrl}]"), "_").trim().take(80).ifEmpty { "audio" }

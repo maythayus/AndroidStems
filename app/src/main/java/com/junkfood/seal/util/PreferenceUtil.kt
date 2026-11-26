@@ -236,7 +236,7 @@ private val IntPreferenceDefaults =
         CONVERT_SUBTITLE to NOT_SPECIFIED,
         DOWNLOAD_TYPE_INITIALIZATION to USE_PREVIOUS_SELECTION,
         YT_DLP_UPDATE_CHANNEL to YT_DLP_NIGHTLY,
-        // Seal Stems : audio seul par défaut, meilleure qualité, sans réencodage (idéal pour séparer les pistes)
+        // Android Stems : audio seul par défaut, meilleure qualité, sans réencodage (idéal pour séparer les pistes)
         DOWNLOAD_TYPE to DownloadType.Audio.ordinal,
     )
 
