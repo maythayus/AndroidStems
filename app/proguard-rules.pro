@@ -66,3 +66,10 @@
 #-keepnames class <1>$$serializer { # -keepnames suffices; class is kept when serializer() is kept.
 #    static <1>$$serializer INSTANCE;
 #}
+# Android Stems : ONNX Runtime passe par JNI et la réflexion, il ne faut rien renommer ni retirer.
+-keep class ai.onnxruntime.** { *; }
+# JTransforms / JLargeArrays référencent des classes absentes sur Android (sun.misc, commons-math).
+-dontwarn org.jtransforms.**
+-dontwarn pl.edu.icm.jlargearrays.**
+-dontwarn org.apache.commons.math3.**
+-dontwarn sun.misc.Unsafe
